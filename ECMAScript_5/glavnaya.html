@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript" src="js.js"></script>
+
+	<title>Дз к уроку 3. Функции. ООП. ВОМ и DOM. - Главная</title>
+
+
+<!-- <script type="text/javascript">
+	
+</script> -->
+
+
+</head>
+
+<body onload="clik()">
+<center><a class="aa" href="constructor.html"><div class="ss">Создать</div></a></center>
+<div id="qwe" style="width: 200px; height: 100px;" onclick="cd()"></div>
+<!-- <div id="tab" style="width: 100%; height: 500px;"></div> -->
+<center><table id="t" border="1" class="table_blur"></table></center>
+
+<script type="text/javascript">
+
+function clik()
+{
+var clik=document.getElementById('qwe');
+clik.click();
+}
+
+
+
+var j=document.getElementById("qwe");
+
+var myData = JSON.parse(localStorage.getItem("objectToPass"));//localStorage['objectToPass'];
+//localStorage.removeItem( 'objectToPass' ); 
+
+function cd()
+{
+
+
+if (myData.length !=0) 
+{
+
+
+
+//j.innerHTML=myData[1]["dolg"];
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+//var del;
+
+var stroka0 = document.createElement('tr');
+var stolbb0 = document.createElement('td');
+stolbb0.innerHTML="№";
+var stolbb1 = document.createElement('td');
+stolbb1.innerHTML="Должность";
+var stolbb2 = document.createElement('td');
+stolbb2.innerHTML="Фамилия";
+var stolbb3 = document.createElement('td');
+stolbb3.innerHTML="Имя";
+ var stolbb4 = document.createElement('td');
+ stolbb4.innerHTML="Отчество";
+ var stolbb5 = document.createElement('td');
+ stolbb5.innerHTML="Возраст, лет";
+ var stolbb6 = document.createElement('td');
+ stolbb6.innerHTML="Наличие детей";
+ var stolbb7 = document.createElement('td');
+ stolbb7.innerHTML="Общий трудовой стаж, лет";
+ var stolbb8 = document.createElement('td');
+ stolbb8.innerHTML="Образование";
+ var stolbb9 = document.createElement('td');
+ stolbb9.innerHTML="Адрес";
+var stolbb10 =document.createElement('td');
+ stolbb10.innerHTML="Телефон";
+ var stolbb11 =document.createElement('td');
+ stolbb11.innerHTML="Е-маил";
+ var stolbb12 =document.createElement('td');
+ stolbb12.innerHTML="Наличие автомобиля";
+ var stolbb13 = document.createElement('td');
+ stolbb13.innerHTML="Примечание";
+
+document.getElementById("t").appendChild(stroka0);
+
+document.getElementById("t").appendChild(stolbb0);
+document.getElementById("t").appendChild(stolbb1);
+document.getElementById("t").appendChild(stolbb2);
+document.getElementById("t").appendChild(stolbb3);
+document.getElementById("t").appendChild(stolbb4);
+document.getElementById("t").appendChild(stolbb5);
+document.getElementById("t").appendChild(stolbb6);
+document.getElementById("t").appendChild(stolbb7);
+document.getElementById("t").appendChild(stolbb8);
+document.getElementById("t").appendChild(stolbb9);
+document.getElementById("t").appendChild(stolbb10);
+document.getElementById("t").appendChild(stolbb11);
+document.getElementById("t").appendChild(stolbb12);
+document.getElementById("t").appendChild(stolbb13);
+
+
+for (var i = 0; i <=myData.length; i++) 
+{
+	
+var stroka = document.createElement('tr');
+var stolb0 = document.createElement('td');
+stolb0.innerHTML=i+1;
+var stolb1 = document.createElement('td');
+stolb1.innerHTML=myData[i]["dolg"];
+var stolb2 = document.createElement('td');
+stolb2.innerHTML=myData[i]["family"];//noviRabotnik.getFamily();
+var stolb3 = document.createElement('td');
+stolb3.innerHTML=myData[i]["name"];//noviRabotnik.getName();
+ var stolb4 = document.createElement('td');
+ stolb4.innerHTML=myData[i]["otch"];//noviRabotnik.getOtch();
+ var stolb5 = document.createElement('td');
+ stolb5.innerHTML=myData[i]["age"];//noviRabotnik.getAge();
+ var stolb6 = document.createElement('td');
+ stolb6.innerHTML=myData[i]["child"];//noviRabotnik.getChild();
+ var stolb7 = document.createElement('td');
+ stolb7.innerHTML=myData[i]["staj"];//noviRabotnik.getStaj();
+ var stolb8 = document.createElement('td');
+ stolb8.innerHTML=myData[i]["educat"];//noviRabotnik.getEducat();
+ var stolb9 = document.createElement('td');
+ stolb9.innerHTML=myData[i]["address"];//noviRabotnik.getAddress();
+ var stolb10 =document.createElement('td');
+ stolb10.innerHTML=myData[i]["phone"];//noviRabotnik.getPhone();
+ var stolb11 =document.createElement('td');
+ stolb11.innerHTML=myData[i]["mail"];//noviRabotnik.getMail();
+ var stolb12 = document.createElement('td');
+ stolb12.innerHTML=myData[i]["auto"];//noviRabotnik.getAuto();
+
+ var stolb13 = document.createElement('td');
+stolb13.innerHTML="<div  class="+"redcl"+" id="+"red"+i+">Редактировать</div><div class="+"delcl"+" id="+"del"+i+">Удалить</div>";
+
+//onclick="+"function(){myData.splice("+i+","+ 1 + ");localStorage.removeItem('objectToPass');localStorage.setItem('objectToPass',JSON.stringify(myData));}"+" 
+//onclick="+"del()"+"
+
+//document.tab.appendChild(head);
+
+//document.getElementById("t").appendChild(stroka0);
+document.getElementById("t").appendChild(stroka);
+document.getElementById("t").appendChild(stolb0);
+document.getElementById("t").appendChild(stolb1);
+document.getElementById("t").appendChild(stolb2);
+document.getElementById("t").appendChild(stolb3);
+document.getElementById("t").appendChild(stolb4);
+document.getElementById("t").appendChild(stolb5);
+document.getElementById("t").appendChild(stolb6);
+document.getElementById("t").appendChild(stolb7);
+document.getElementById("t").appendChild(stolb8);
+document.getElementById("t").appendChild(stolb9);
+document.getElementById("t").appendChild(stolb10);
+document.getElementById("t").appendChild(stolb11);
+document.getElementById("t").appendChild(stolb12);
+document.getElementById("t").appendChild(stolb13);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+} 
+else 
+{
+var fs=document.getElementById("tab");
+fs.style.display="none";
+}
+
+}
+
+//Обработка нажатия кнопок
+document.querySelector('#t').addEventListener('click', function(e){ 
+  var id = e.target.id; // Получили ID, т.к. в e.target содержится элемент по которому кликнули
+var ida = id.substring(0, 3); 
+// document.querySelector('#qwe').innerHTML = ida; 
+if (ida=="del") // Удалить
+{
+
+var str = id.substring(3, id.length);
+
+myData.splice(str,1);
+localStorage.removeItem('objectToPass');
+localStorage.setItem('objectToPass',JSON.stringify(myData));
+location.replace("glavnaya.html");	
+
+}
+
+
+if (ida=="red") // Редактировать
+{
+
+var str = id.substring(3, id.length);
+
+localStorage.setItem('idRec', str);
+localStorage.setItem('objectToPass',JSON.stringify(myData));
+location.replace("redact.html");
+
+}
+
+});
+
+
+</script>
+
+
+
+
+
+
+<!-- document.querySelector('#t').addEventListener('click', function(e){ // Вешаем обработчик клика на UL, не LI
+  var id = e.target.id; // Получили ID, т.к. в e.target содержится элемент по которому кликнули
+ 
+
+var str = id.substring(3, id.length);
+
+localStorage.setItem('idRec', str);
+localStorage.setItem('objectToPass',JSON.stringify(myData));
+location.replace("redact.html");
+}); -->
+
+
+
+
+
+
+
+</body>
+
+</html>
